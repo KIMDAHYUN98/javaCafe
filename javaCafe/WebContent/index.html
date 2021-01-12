@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>index.html</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+	$(function() { // p.320 참조
+		$.ajax({
+			url: 'getEmpList', // /index.html, /getEmpList => 경로 같음, 상위
+			type: 'get',
+			dataType: 'json',
+			success: function(result){
+				//console.log(result)
+				let data = result;
+				let firstNames = $(data).map(function(i, o) { // map() : 새로운 배열 생성
+					return o.firstName;
+				}).get();
+				let grepNames = $.grep(firstNames, function(o, i){
+					return o.length > 5; // o의 문자열 길이
+				}, true); // false : default / false => return 구문을 만족 할 때 , true => return 구문을 만족 하지 않을 때 
+				console.log(grepNames);
+			},
+			error: function(result){
+				//console.log(result)
+			}
+			
+		});
+	})
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>
