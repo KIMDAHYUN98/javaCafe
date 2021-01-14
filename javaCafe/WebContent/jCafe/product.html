@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jCafe/product.html</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+	// 1. 전송처리 ajax
+
+	// 2. 파일 첨부 function()
+	function file_open() {
+		window.open('upload.jsp', 'upload', 'width=300 height=200 left=300 top=30');
+	}
+	
+</script>
+</head>
+<body>
+
+<form action="../PostProductServlet" id="frm" method="post">
+<table border='1'>
+<tr>
+<td>Item No</td>
+<td><input type="text" name="itemNo" value="bean_007"></td> 
+</tr>
+<tr>
+<td>Item</td>
+<td><input type="text" name="item" value="브라질 원두"></td>
+</tr>
+<tr>
+<td>category</td>
+<td><input type="text" name="category" value="bean"></td>
+</tr>
+<tr>
+<td>price</td>
+<td><input type="text" name="price" value="3500"></td>
+</tr>
+<tr>
+<td>content</td>
+<td><input type="text" name="content" value="브라질 산토스 원두입니다."></td>
+</tr>
+<tr>
+<td>likeIt</td>
+<td><input type="text" name="likeIt" value="4"></td>
+</tr>
+<tr>
+<td>image</td>
+<td>
+<input type="text" name="image" />
+<input type="button" value="파일첨부" onclick="file_open()"/>
+</td>
+</tr>
+<tr>
+<td colspan="2"><button id="save">저장</button><button>취소</button></td>
+</tr>
+
+</table>
+</form>
+
+</body>
+</html>

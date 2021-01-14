@@ -22,20 +22,8 @@
 		let outAry = [];
 		let data1 = result;
 		console.log(data1);
-		$(document).ready(function() {
-		let titleAry = $('#show').DataTable( {
-	        data: data1,
-	        columns: [
-	            { title: "empId" },
-	            { title: "firstName" },
-	            { title: "lastName" },
-	            { title: "email" },
-	            { title: "phoneNumber" },
-	            { title: "hire_date" },
-	            { title: "job_id" }
-	        ]
-	    } );
-		outAry.push(titleAry);
+		
+		
 		console.log(data1);
 		
 		for(val of data1) {
@@ -46,15 +34,26 @@
 				inAry.push(val[field]);
 			}
 			outAry.push(inAry);
-		}
-		
-		} );
-		
-	 	console.log(outAry);
-		
-		
+		}	
 	}
-
+	
+		$(document).ready(function() {
+			let titleAry = $('#show').DataTable( {
+		        data: json,
+		        columns: [
+		            { title: "empId" },
+		            { title: "firstName" },
+		            { title: "lastName" },
+		            { title: "email" },
+		            { title: "phoneNumber" },
+		            { title: "hire_date" },
+		            { title: "job_id" }
+		        ]
+		    } );
+			outAry.push(titleAry);
+	 	console.log(outAry);
+		})
+	
 </script>
 
 </head>
